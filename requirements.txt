@@ -1,3 +1,2 @@
-requests
-python-dotenv
-tabulate
+# See backend/requirements.txt for backend dependencies
+# See frontend/package.json for frontend dependencies
