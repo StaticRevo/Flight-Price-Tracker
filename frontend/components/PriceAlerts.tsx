@@ -21,28 +21,29 @@ export default function PriceAlerts({ alerts }: PriceAlertsProps) {
       {alerts.map((alert, idx) => (
         <div
           key={idx}
-          className="p-4 bg-gradient-to-r from-yellow-900/30 to-orange-900/30 border border-yellow-500/30 rounded-lg"
+          className="p-4 bg-gradient-to-r from-yellow-900/30 via-orange-900/30 to-red-900/30 border border-yellow-500/30 rounded-lg backdrop-blur-sm shadow-lg shadow-yellow-500/10 hover:shadow-lg hover:shadow-yellow-500/20 transition-all duration-300 animate-in fade-in"
         >
           <div className="flex justify-between items-start">
-            <div>
-              <h3 className="text-lg font-semibold text-yellow-400 mb-1">
-                🎉 Price Drop Alert!
+            <div className="flex-1">
+              <h3 className="text-lg font-bold text-yellow-400 mb-2 flex items-center gap-2">
+                <span className="text-xl animate-float">🎉</span>
+                Price Drop Alert!
               </h3>
-              <p className="text-slate-300 mb-2">
+              <p className="text-slate-300 mb-3 font-medium">
                 {alert.flight.origin} → {alert.flight.destination}
               </p>
               <div className="grid grid-cols-3 gap-4 text-sm">
-                <div>
-                  <span className="text-slate-400">Airline:</span>
-                  <p className="text-yellow-300 font-semibold">{alert.flight.airline}</p>
+                <div className="p-2 bg-slate-800/30 rounded">
+                  <span className="text-slate-400 block mb-1">Airline:</span>
+                  <p className="text-yellow-300 font-bold">{alert.flight.airline}</p>
                 </div>
-                <div>
-                  <span className="text-slate-400">Current:</span>
-                  <p className="text-green-400 font-semibold">€{alert.current_price}</p>
+                <div className="p-2 bg-slate-800/30 rounded">
+                  <span className="text-slate-400 block mb-1">Current Price:</span>
+                  <p className="text-green-400 font-bold">€{alert.current_price}</p>
                 </div>
-                <div>
-                  <span className="text-slate-400">Threshold:</span>
-                  <p className="text-slate-300 font-semibold">€{alert.threshold}</p>
+                <div className="p-2 bg-slate-800/30 rounded">
+                  <span className="text-slate-400 block mb-1">Your Threshold:</span>
+                  <p className="text-slate-300 font-bold">€{alert.threshold}</p>
                 </div>
               </div>
             </div>

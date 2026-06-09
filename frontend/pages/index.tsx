@@ -76,19 +76,22 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 p-6">
+    <div className="min-h-screen bg-slate-950 p-6">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="mb-8">
-          <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-2">
-            ✈️ Flight Price Tracker
-          </h1>
-          <p className="text-slate-400">Monitor flight prices and get alerts when they drop</p>
+        <div className="mb-8 animate-in fade-in">
+          <div className="flex items-center gap-3 mb-2">
+            <span className="text-5xl animate-float">✈️</span>
+            <h1 className="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+              Flight Price Tracker
+            </h1>
+          </div>
+          <p className="text-slate-400 ml-2">Track flights, catch deals, fly cheap ✨</p>
         </div>
 
         {/* Error Display */}
         {error && (
-          <div className="mb-6 p-4 bg-red-900/20 border border-red-500/30 rounded-lg text-red-300">
+          <div className="mb-6 p-4 bg-red-900/20 border border-red-500/30 rounded-lg text-red-300 animate-in fade-in">
             {error}
           </div>
         )}
